@@ -25,13 +25,13 @@ CMD ["/usr/bin/usage"]
 
 EXPOSE 8080 8778
 
-ENV TOMCAT_VERSION 8.0.23
+ENV TOMCAT_VERSION 7.0.62
 ENV DEPLOY_DIR /maven
 
 
 USER root
 # Get and Unpack Tomcat
-RUN curl http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz | tar -xzf - -C /opt \
+RUN curl http://archive.apache.org/dist/tomcat/tomcat-7/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz | tar -xzf - -C /opt \
  && ln -s /opt/apache-tomcat-${TOMCAT_VERSION} /opt/tomcat \
  && chown -R jboss:jboss /opt/tomcat/
 USER jboss
